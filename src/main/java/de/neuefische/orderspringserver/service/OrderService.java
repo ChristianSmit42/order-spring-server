@@ -1,6 +1,7 @@
 package de.neuefische.orderspringserver.service;
 
 import de.neuefische.orderspringserver.db.OrderDb;
+import de.neuefische.orderspringserver.db.ProductDb;
 import de.neuefische.orderspringserver.model.Order;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;

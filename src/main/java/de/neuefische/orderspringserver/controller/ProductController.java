@@ -4,10 +4,7 @@ import de.neuefische.orderspringserver.model.Product;
 import de.neuefische.orderspringserver.service.ProductService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -28,6 +25,10 @@ public class ProductController {
     @GetMapping("{searchParameter}")
     public Collection<Product> findProducts(@PathVariable() String searchParameter){
         return Collections.unmodifiableCollection(productService.searchProducts(searchParameter));
+    }
+    @GetMapping("findproductbyid")
+    public Product getProductById(@RequestParam(name ="id",required = false) String id){
+        return productService.findProductById(id);
     }
 
 }

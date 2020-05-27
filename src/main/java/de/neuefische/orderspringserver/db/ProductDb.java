@@ -3,10 +3,7 @@ package de.neuefische.orderspringserver.db;
 import de.neuefische.orderspringserver.model.Product;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.UUID;
+import java.util.*;
 
 
 @Repository
@@ -14,10 +11,10 @@ public class ProductDb {
     private ArrayList<Product> products = new ArrayList<>();
 
     public ProductDb(){
-        products.add(new Product(UUID.randomUUID().toString(), "Karotte"));
-        products.add(new Product(UUID.randomUUID().toString(), "Tomate"));
-        products.add(new Product(UUID.randomUUID().toString(), "Kiwi"));
-        products.add(new Product(UUID.randomUUID().toString(), "Marmelade"));
+        products.add(new Product("1", "Karotte"));
+        products.add(new Product("2", "Tomate"));
+        products.add(new Product("3", "Kiwi"));
+        products.add(new Product("4", "karpfen"));
     }
 
 
@@ -33,5 +30,13 @@ public class ProductDb {
             }
         }
         return matchingProducts;
+    }
+    public Optional<Product> findProductById(String id){
+        for(Product product:products){
+            if(product.getId().equals(id)){
+                return Optional.of(product);
+            }
+        }
+        return Optional.empty();
     }
 }

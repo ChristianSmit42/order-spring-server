@@ -11,10 +11,10 @@ public class ProductDb {
     private ArrayList<Product> products = new ArrayList<>();
 
     public ProductDb(){
-        products.add(new Product("1", "Karotte"));
+       /* products.add(new Product("1", "Karotte"));
         products.add(new Product("2", "Tomate"));
         products.add(new Product("3", "Kiwi"));
-        products.add(new Product("4", "karpfen"));
+        products.add(new Product("4", "karpfen"));*/
     }
 
 

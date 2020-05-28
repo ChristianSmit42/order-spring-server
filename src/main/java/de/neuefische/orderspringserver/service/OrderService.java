@@ -11,11 +11,10 @@ import java.util.Collection;
 import java.util.Collections;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Service
 public class OrderService {
-    private OrderDb orderDb = new OrderDb();
 
+    private final OrderDb orderDb;
 
     public void addOrder(Order order){
         orderDb.addOrder(order);

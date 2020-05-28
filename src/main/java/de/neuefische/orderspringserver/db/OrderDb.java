@@ -32,4 +32,8 @@ public class OrderDb {
         this.orders.add(order);
     }
 
+    public void clearDb(){
+        this.orders.clear();
+    }
+
 }

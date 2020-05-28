@@ -28,7 +28,9 @@ public class ProductController {
     }
     @GetMapping("findproductbyid")
     public Product getProductById(@RequestParam(name ="id",required = false) String id){
+        System.out.println("");
         return productService.findProductById(id);
+
     }
 
 }
